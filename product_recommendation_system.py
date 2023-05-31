@@ -1,9 +1,11 @@
-import numpy as np
+import numpy as np       # numpy module
 
-users = ["user1","user2","user3"]
-products = ["laptop","mouse","monitor","pen drive","hard disk"]
+users = ["user1","user2","user3"]  # users
+
+products = ["laptop","mouse","monitor","pen drive","hard disk"] # products
 
 uids = {} #dict
+
 for i in range(len(users)):
   uids[users[i]]=i
 
@@ -14,8 +16,9 @@ for i in range(len(products)):
 
 print(uids, pids)
 
-prd_fq = np.zeros((len(users),len(products)) )
+prd_fq = np.zeros((len(users),len(products)) )   # Product frequency 
 print(prd_fq)
+
 
 def reclist(uid):
   uid = uids[uid]
@@ -23,6 +26,7 @@ def reclist(uid):
   plist = np.argsort(upids)[::-1][:len(upids)]
   plist = [products[p] for p in plist]
   print(plist)
+  
 
 def viewproduct(uid, pid):
   uid = uids[uid]
@@ -33,6 +37,7 @@ def viewproduct(uid, pid):
 
 uname = input("Enter user name:")
 print(reclist(uname))
+
 pname = input("Select one product:")
 viewproduct(uname, pname)
 
